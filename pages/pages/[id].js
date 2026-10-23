@@ -38,7 +38,7 @@ export default function Item({ item }) {
               target="_blank"
               rel="noreferrer"
             >
-              View credits on MobyGames ↗
+              View credits on MobyGames
             </a>
           )}
           {item.repo && (
@@ -48,7 +48,7 @@ export default function Item({ item }) {
               target="_blank"
               rel="noreferrer"
             >
-              View repository ↗
+              View repository
             </a>
           )}
           {item.site && (
@@ -58,7 +58,7 @@ export default function Item({ item }) {
               target="_blank"
               rel="noreferrer"
             >
-              Explore YoRHa Archive ↗
+              Explore YoRHa Archive
             </a>
           )}
           {item.storybook && (
@@ -68,7 +68,7 @@ export default function Item({ item }) {
               target="_blank"
               rel="noreferrer"
             >
-              Component library ↗
+              Component library
             </a>
           )}
         </div>

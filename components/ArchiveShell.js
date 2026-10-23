@@ -48,7 +48,7 @@ export default function ArchiveShell({ children, active = "projects" }) {
           ))}
         </nav>
         <a className="header-contact" href="mailto:ghanirafli8@gmail.com">
-          Get in touch <span aria-hidden="true">↗</span>
+          Get in touch
         </a>
       </header>
       {children}
@@ -58,7 +58,7 @@ export default function ArchiveShell({ children, active = "projects" }) {
           target="_blank"
           rel="noreferrer"
         >
-          Built with my NieR design system ↗
+          Built with my NieR design system
         </a>
       </footer>
     </div>

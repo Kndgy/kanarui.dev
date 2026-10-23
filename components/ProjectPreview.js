@@ -45,7 +45,7 @@ export default function ProjectPreview({ project }) {
             height={1154}
             priority
           />
-          <span className="expand-image">View full size ↗</span>
+          <span className="expand-image">View full size</span>
         </a>
         <div className="preview-tabs" aria-label="Screenshot views">
           {project.images.map((image, index) => (

@@ -90,16 +90,16 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                GitHub ↗
+                GitHub
               </a>
               <a
                 href="https://linkedin.com/in/rafli-ghani"
                 target="_blank"
                 rel="noreferrer"
               >
-                LinkedIn ↗
+                LinkedIn
               </a>
-              <Link href="/resume">Résumé ↗</Link>
+              <Link href="/resume">Résumé</Link>
             </div>
           </aside>
         </section>
@@ -124,9 +124,7 @@ export default function Home() {
           {section === "projects" && (
             <div className="project-layout">
               <aside className="project-sidebar">
-                <div className="sidebar-label">
-                  PROJECT DIRECTORY <span>↓</span>
-                </div>
+                <div className="sidebar-label">PROJECT DIRECTORY</div>
                 <div className="project-list" aria-label="Select a project">
                   {data.map((item) => (
                     <button
@@ -148,9 +146,6 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="directory-note">
-                  <span className="crosshair" aria-hidden="true">
-                    +
-                  </span>
                   <span className="eyebrow">PERSONAL & STUDIO WORK</span>
                 </div>
               </aside>
@@ -188,13 +183,13 @@ export default function Home() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          View credits <span>↗</span>
+                          View credits
                         </a>
                         <Link
                           className="text-link"
                           href={`/pages/${project.id}`}
                         >
-                          Project details →
+                          Project details
                         </Link>
                       </>
                     )}
@@ -205,7 +200,7 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        View repository <span>↗</span>
+                        View repository
                       </a>
                     )}
                     {project.site && (
@@ -215,7 +210,7 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Explore YoRHa Archive ↗
+                        Explore YoRHa Archive
                       </a>
                     )}
                     {project.storybook && (
@@ -225,12 +220,12 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Component library ↗
+                        Component library
                       </a>
                     )}
                     {project.images && (
                       <Link className="action-button" href="/pages/1">
-                        Explore project <span>→</span>
+                        Explore project
                       </Link>
                     )}
                   </div>
@@ -242,8 +237,8 @@ export default function Home() {
             <div className="minecraft-section">
               <div className="collection-toolbar">
                 <p>
-                  Gameplay systems, entity behaviors, and developer
-                  contributions.
+                  Gameplay systems, entity behaviors, data driven architecture
+                  etc
                 </p>
                 <label>
                   Studio{" "}
@@ -260,9 +255,9 @@ export default function Home() {
                   </select>
                 </label>
               </div>
-              <p className="result-count" aria-live="polite">
+              {/* <p className="result-count" aria-live="polite">
                 {visibleAddons.length} contributions / {studio}
-              </p>
+              </p> */}
               <div className="addon-grid">
                 {visibleAddons.map((item) => (
                   <article className="addon-card" key={item.video}>
@@ -281,7 +276,7 @@ export default function Home() {
                         loading="lazy"
                       />
                       <span className="play-icon" aria-hidden="true"></span>
-                      <span className="trailer-label">WATCH TRAILER ↗</span>
+                      <span className="trailer-label">WATCH TRAILER</span>
                     </a>
                     <div className="addon-copy">
                       <span className="eyebrow">{item.studio}</span>
@@ -309,7 +304,7 @@ export default function Home() {
                     Minecraft Bedrock gameplay systems.
                   </p>
                   <Link href="/resume" className="action-button">
-                    View résumé <span>↗</span>
+                    View résumé
                   </Link>
                   <h4>EDUCATION</h4>
                   <p>
@@ -345,9 +340,7 @@ export default function Home() {
           )}
         </section>
         <section className="contact-strip">
-          <a href="mailto:ghanirafli8@gmail.com">
-            ghanirafli8@gmail.com <span>↗</span>
-          </a>
+          <a href="mailto:ghanirafli8@gmail.com">ghanirafli8@gmail.com</a>
         </section>
       </main>
     </ArchiveShell>

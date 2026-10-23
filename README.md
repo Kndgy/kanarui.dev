@@ -11,6 +11,8 @@ npm run dev
 
 Production: `npm run build`, then `npm start`.
 
+Images are served directly from `public` with `images.unoptimized: true` in `next.config.js`. This avoids routing portfolio screenshots and thumbnails through the Netlify image optimizer. Keep the `public/portfolio` and `public/bedrock` assets in the deployment. After changing this configuration, rebuild and redeploy on Netlify; restarting an existing deployment does not update its generated image URLs.
+
 ## Content
 
 - `data/data.js`: three personal projects, Coral Island studio work, nine Minecraft contributions, experience, and skills.
