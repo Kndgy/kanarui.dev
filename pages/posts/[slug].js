@@ -1,44 +1,46 @@
-import fs from 'fs'
-import matter from 'gray-matter'
-import md from 'markdown-it'
-import Link from 'next/link'
-import styles from '../../styles/PostContent.module.css'
+import fs from "fs";
+import matter from "gray-matter";
+import md from "markdown-it";
+import Link from "next/link";
+import Head from "next/head";
+import ArchiveShell from "../../components/ArchiveShell";
 
-export default function Post({frontmatter, content}) {
-
-  const {title, desc, category, date, bannerImage, tags} = frontmatter
-
+export default function Post({ frontmatter, content }) {
   return (
-    <main className={styles.container}>
-        {/* <img src={bannerImage}/> */}
-        <Link href={'/'}>Go back to home</Link>
-        <br/>
-        <h1>{title}</h1>
-        <h2>{date}</h2>
-        <h3>{category} {tags.join()}</h3>
+    <ArchiveShell active="">
+      <Head>
+        <title>{`${frontmatter.title} — Rafli Ghani`}</title>
+      </Head>
+      <main id="main" className="document post-document">
+        <Link className="back-link" href="/">
+          ← Back to portfolio
+        </Link>
+        <p className="eyebrow">ARCHIVE / JOURNAL</p>
+        <h1>{frontmatter.title}</h1>
+        <p className="post-meta">{frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-    </main>
-  )
+      </main>
+    </ArchiveShell>
+  );
 }
 
 export async function getStaticPaths() {
+  const files = fs.readdirSync("posts");
 
-const files = fs.readdirSync("posts");
+  const paths = files.map((fileName) => ({
+    params: {
+      slug: fileName.replace(".md", ""),
+    },
+  }));
 
-const paths = files.map((fileName) => ({
-  params: {
-    slug: fileName.replace(".md", ""),
-  },
-}));
-
-return {
-  paths,
-  fallback: false,
-};
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8');
+  const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
   return {
     props: {
